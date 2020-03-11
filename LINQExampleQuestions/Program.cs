@@ -10,6 +10,8 @@ namespace LINQExampleQuestions
 	{
 		static void Main(string[] args)
 		{
+			Problem1 instance = new Problem1();
+			instance.CompressedAndOrderedString();
 		}
 	}
 }
