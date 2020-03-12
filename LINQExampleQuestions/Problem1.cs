@@ -29,14 +29,18 @@ namespace LINQExampleQuestions
 
 		}
 
-		public Dictionary<char, string> CompressedAndOrderedString(string word)
+		public void CompressedAndOrderedString(string word)
 		{
-			
-			var compressedString = word.ToLower().OrderBy(numberOfCharacters => numberOfCharacters).GroupBy(letter => letter).ToDictionary(grp => grp.Key, grp => grp.Count().ToString());
-			return compressedString;
+			var compressedString = word.ToUpper().OrderBy(ch => ch).GroupBy(al => al).Select(c => c);
 
-			
+			foreach (var character in compressedString)
+			{
+
+				Console.WriteLine($"{character.Key} + {character.Count()}");
+
+			}
 		}
+
 	}
 }
 
